@@ -21,9 +21,7 @@ const val RESPONSE_DELAY = 5_000L
 const val REQUEST_TIMEOUT = 7_000L
 
 fun main() {
-    val server = embeddedServer(ServerCIO, port = PORT, host = "0.0.0.0", configure = {
-
-    }) {
+    val server = embeddedServer(ServerCIO, port = PORT, host = "0.0.0.0") {
         routing {
             get("/") {
                 call.respondTextWriter(writer = ::writeResponse)
